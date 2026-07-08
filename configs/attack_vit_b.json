@@ -1,0 +1,22 @@
+{
+  "agent_config_path": "configs/agent_api.json",
+  "agent_trace_path": "results/agentic_trace.jsonl",
+  "agent_enabled": true,
+  "agent_api_enabled": true,
+  "agent_local_enabled": false,
+  "agent_query_interval": 1,
+  "api_policy": "state_cache",
+  "min_epsilon_255": 10.0,
+  "max_epsilon_255": 16.0,
+  "target_psnr": 28.0,
+  "target_ssim": 0.72,
+  "target_lpips": 0.30,
+  "lpips_interval": 0,
+  "enable_lpips": true,
+  "num_sample_neighbor": 10,
+  "num_sample_operator": 20,
+  "max_sample_neighbor": 14,
+  "max_sample_operator": 27,
+  "mdcs_gamma": 1.8,
+  "quality_enabled": true
+}

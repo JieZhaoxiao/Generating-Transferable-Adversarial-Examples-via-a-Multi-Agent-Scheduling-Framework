@@ -1,0 +1,13 @@
+{
+  "endpoint": "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
+  "credential_env": "DASHSCOPE_API_KEY",
+  "models": [
+    "qwen3.6-plus"
+  ],
+  "temperature": 0.1,
+  "max_tokens": 128,
+  "timeout": 30,
+  "panel_size": 1,
+  "panel_max_attempts": 1,
+  "api_cache_enabled": true
+}

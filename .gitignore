@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+
+results/vit_b_eval/
+results/generated_vit_b_adv/
+results/agentic_trace.jsonl
+
+.DS_Store
+Thumbs.db
