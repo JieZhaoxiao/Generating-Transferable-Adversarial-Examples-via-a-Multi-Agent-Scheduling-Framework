@@ -14,7 +14,7 @@ EVAL_MODELS = [
     ("Res-50", "resnet50", "cnn"),
     ("VGG-19", "vgg19", "cnn"),
     ("ViT-B", "vit_base_patch16_224", "vit"),
-    ("Swin-B", "swin_tiny_patch4_window7_224", "vit"),
+    ("Swin-T", "swin_tiny_patch4_window7_224", "vit"),
 ]
 
 

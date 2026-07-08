@@ -30,31 +30,6 @@ The main components are organized as follows:
 | Coordinator Agent | `transferattack/agent/llm_controller.py` | Queries Qwen3.6-Plus and records the fused action `{n_op, n_nei, epsilon, alpha, gamma, lambda, eta}`. |
 | Method entry | `transferattack/agentic_schedule.py` | Provides the attack entry used by `generate.py`. |
 
-```text
-configs/
-  agent_api.json                   Qwen3.6-Plus API configuration template
-  attack_vit_b.json                ViT-B generation configuration
-
-data/
-  labels.csv                       Image labels for evaluation
-  images/                          Clean evaluation images
-
-results/
-  vit_b_agentic_adv/               Provided ViT-B adversarial examples
-
-transferattack/
-  agentic_schedule.py              Method entry
-  agent/                           Coordinator Agent
-  input_transformation/            Transferability Agent and Iterative Agent
-  quality/                         Quality Agent
-
-generate.py                        Craft adversarial examples
-evaluate.py                        Evaluate adversarial examples
-evaluate_attack.py                 Attack-success-rate evaluation
-evaluate_quality.py                Image-quality evaluation
-main.py                            Attack runner
-```
-
 ## Environment
 
 ```bash
@@ -80,5 +55,5 @@ export DASHSCOPE_API_KEY=<your_token>
 Run:
 
 ```bash
-python generate.py --GPU_ID 0
+python generate.py --GPU_ID 0,1,2,3,4,5,6,7
 ```

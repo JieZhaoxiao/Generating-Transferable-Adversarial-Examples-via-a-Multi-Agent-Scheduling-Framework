@@ -380,7 +380,7 @@ class LLMAgentController:
         return (
             "Choose next-iteration parameters under L_inf <= 16/255. Return the final fused action "
             "a_t={n_op,n_nei,epsilon,alpha,gamma,lambda,eta}. "
-            "Target average transfer ASR is at least 95% across Res-50, VGG-19, ViT-B, and Swin-B, so do not reduce epsilon or sampling until "
+            "Target average transfer ASR is at least 95% across Res-50, VGG-19, ViT-B, and Swin-T, so do not reduce epsilon or sampling until "
             "source_success_rate is stable and margin_min is positive. "
             "If source_success_rate is low or margin_min is negative, increase step strength and "
             "available operator/neighbor sampling and keep eta small. "

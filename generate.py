@@ -16,7 +16,7 @@ def parse_args():
     parser.add_argument("--epoch", default=10, type=int)
     parser.add_argument("--eps", default=16 / 255, type=float)
     parser.add_argument("--batchsize", default=16, type=int)
-    parser.add_argument("--GPU_ID", default="0")
+    parser.add_argument("--GPU_ID", default="0,1,2,3,4,5,6,7")
     parser.add_argument("--max_images", default=None, type=int)
     parser.add_argument("--attack_config", default="configs/attack_vit_b.json")
     return parser.parse_args()

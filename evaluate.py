@@ -35,7 +35,7 @@ def run(cmd):
 
 def format_paper_table(frame):
     table = frame.copy()
-    for column in ["Res-50", "VGG-19", "ViT-B", "Swin-B", "Avg."]:
+    for column in ["Res-50", "VGG-19", "ViT-B", "Swin-T", "Avg."]:
         table[column] = pd.to_numeric(table[column], errors="coerce").round(1)
     table["SSIM"] = pd.to_numeric(table["SSIM"], errors="coerce").round(4)
     table["L2"] = pd.to_numeric(table["L2"], errors="coerce").round(2)
@@ -110,7 +110,7 @@ def main():
             "Res-50",
             "VGG-19",
             "ViT-B",
-            "Swin-B",
+            "Swin-T",
             "Avg.",
             "SSIM",
             "L2",

@@ -24,7 +24,7 @@ def get_parser():
     parser.add_argument('--input_dir', default='./data', type=str, help='the path for custom benign images, default: untargeted attack data')
     parser.add_argument('--output_dir', default='./results', type=str, help='the path to store the adversarial patches')
     parser.add_argument('--targeted', action='store_true', help='targeted attack')
-    parser.add_argument('--GPU_ID', default='0', type=str)
+    parser.add_argument('--GPU_ID', default='0,1,2,3,4,5,6,7', type=str)
     parser.add_argument('--attack_config', default=None, type=str, help='optional JSON file with attack kwargs')
     parser.add_argument('--max_images', default=None, type=int, help='maximum number of images to process')
     return parser.parse_args()
@@ -43,6 +43,9 @@ def load_attack_config(config_path):
 def main():
     args = get_parser()
     os.environ["CUDA_VISIBLE_DEVICES"] = args.GPU_ID
+    if torch.cuda.is_available():
+        visible_devices = torch.cuda.device_count()
+        print(f'=> Using {visible_devices} visible CUDA device(s): {args.GPU_ID}')
     if not os.path.exists(args.output_dir):
         os.makedirs(args.output_dir)
 

@@ -65,7 +65,11 @@ class Attack(object):
                     model = timm.create_model(model_name, pretrained=True)
             else:
                 raise ValueError('Model {} not supported'.format(model_name))
-            return wrap_model(model.eval().cuda())
+            wrapped = wrap_model(model.eval().cuda())
+            if torch.cuda.device_count() > 1:
+                print('=> Using DataParallel on {} GPUs'.format(torch.cuda.device_count()))
+                wrapped = nn.DataParallel(wrapped)
+            return wrapped
 
         if isinstance(model_name, list):
             return EnsembleModel([load_single_model(name) for name in model_name])
